@@ -1,4 +1,62 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Postal Prices</h1>
+		<h2>US First Class</h2>
+		<$- require('../../public/postage.js'); %>
+		<ul>
+			<% stampedLetter.forEach(function(stampedLetter) { %>
+			<li>
+            <strong><%= stampedLetter.name %></strong>
+            representing <%= stampedLetter.val %>, price <%= stampedLetter.price %>
+			</li>
+			<% }); %>
+		</ul>
+		<ul>
+			<% meteredLetter.forEach(function(meteredLetter) { %>
+			<li>
+            <strong><%= meteredLetter.name %></strong>
+            representing <%= meteredLetter.val %>, price <%= meteredLetter.price %>
+			</li>
+			<% }); %>
+		</ul>
+		<ul>
+			<% largeEnvelope.forEach(function(largeEnvelope) { %>
+			<li>
+            <strong><%= largeEnvelope.name %></strong>
+            representing <%= largeEnvelope.val %>, price <%= largeEnvelope.price %>
+			</li>
+			<% }); %>
+		</ul>
+		<ul>
+			<% packageService.forEach(function(packageService) { %>
+			<li>
+            <strong><%= packageService.name %></strong>
+            representing <%= packageService.val %>, price <%= packageService.price %>
+			</li>
+			<% }); %>
+		</ul>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <% include ../partials/header.ejs %>
@@ -55,12 +113,10 @@
         <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
       </ul>
     </div>
-  </div> <!-- row -->
+  </div>  row
    <div class="alert alert-info text-center" role="alert">
     Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
   </div>
 </div>
-
-
 </body>
-</html>
+</html>-->
