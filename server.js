@@ -17,10 +17,7 @@ app.get('/db', async (req, res) => {
         res.send("Error " + err);
     }
 })
-app.get('index', (req, res) => res.send('pages/index'))
-app.get('css', (req, res) => res.send('public/main'))
-app.get('javascript', (req, res) => res.send('public/main.js'))
-app.get('price', (req, res) => res.send('pages/price.js'))
+app.get('index', (req, res) => res.send('public/postage.html'))
 
 const {Pool} = require('pg');
 const pool = new Pool({
