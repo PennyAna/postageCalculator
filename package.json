@@ -1,5 +1,5 @@
 {
-  "name": "postage app",
+  "name": "postage_app",
   "version": "0.3.0",
   "description": "postal rates assignment",
   "engines": {
@@ -26,7 +26,7 @@
   "keywords": [
     "node",
     "heroku",
-    "express", 
+    "express",
     "pg"
   ],
   "license": "MIT"
