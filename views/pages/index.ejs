@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include('../partials/header'); %>
+  <%- include ../partials/header %>
 </head>
 <body>
 <div class="jumbotron">
@@ -10,8 +10,8 @@
 </div>
 <div class="container">
   <form id="postageInfo">
-    <%- require('postage_type'); %>
-    <%- require('postage_weight'); %>
+    <%- include postage_type %>
+    <%- include postage_weight %>
     <button id="postageBtn" type="button">Find Price</button>
   </form>
 </div>
