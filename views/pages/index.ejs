@@ -9,12 +9,13 @@
   <h2>US First Class</h2>
 </div>
 <div class="container">
-  <form id="postageInfo" action="<%- require('price'); %>">
+  <form id="postageInfo">
     <%- require('postage_type'); %>
     <%- require('postage_weight'); %>
     <button id="postageBtn" type="button">Find Price</button>
   </form>
 </div>
-<script src="<%- require('javascript'); %>"></script>
+<% stylesheet('/public/stylesheets/main.js') %>
+<%- stylesheets %>
 </body>
 </html>
