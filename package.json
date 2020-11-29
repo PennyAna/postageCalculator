@@ -1,11 +1,11 @@
 {
-  "name": "node-js-getting-started",
+  "name": "postageApp",
   "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
+  "description": "postal rates assignment",
   "engines": {
     "node": "12.x"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "node test.js"
