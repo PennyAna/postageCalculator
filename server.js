@@ -3,6 +3,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000))
 app.get('/getPerson', getPerson)
 app.set('view engine', 'ejs')
+apps.set('views', _dirname + '/views')
 app.get('/', (req, res) => res.render('pages/index'))
 app.get('/db', async (req, res) => {
     try {
@@ -16,16 +17,16 @@ app.get('/db', async (req, res) => {
         res.send("Error " + err);
     }
 })
-.get('postage', (req, res) => res.send('public/postage.html'))
-  .get('postjs', (req, res) => res.send('public/stylesheets/postage.js'))
-  .get('postcss', (req, res) => res.send('public/postage.css'))
-  .get('/price', (req, res) => {
+app.use(express.static(_dirname + '/public'))
+app.get('postage', (req, res) => res.send('pages/index'))
+app.get('postcss', (req, res) => res.send('public/main.css'))
+/* app.get('/price', (req, res) => {
 	res.render('public/price.js', {
     stampedLetter: stampedLetter, 
     meteredLetter: meteredLetter, 
     largeEnvelope: largeEnvelope, 
     packageService: packageService
-   })})	  
+   })})	   */
 const {Pool} = require('pg');
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL, 
