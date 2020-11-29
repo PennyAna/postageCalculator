@@ -5,7 +5,7 @@ app.set('port', (process.env.PORT || 5000));
 app.get('/getPerson', getPerson);
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
-app.get('/db', async (req, res) => {
+/* app.get('/db', async (req, res) => {
     try {
         const client = await pool.connect();
         const result = await client.query('SELECT * FROM test_table');
@@ -24,7 +24,7 @@ const pool = new Pool({
     ssl: {
         rejectUnauthorized: false
     }
-});
+}); */
 app.listen(app.get('port'), function() {
   console.log('Now listening for connections on port: ', app.get('port'));
 });
