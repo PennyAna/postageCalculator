@@ -10,7 +10,7 @@ app.listen(app.get('port'), function() {
 
 function getPerson(req, res) {
   console.log('getting person info');
-  var result = (id: 238, first: 'John', last: 'Smith', birthdate: '1983-09-19');
+  var result = {id: 238, first: 'John', last: 'Smith', birthdate: '1983-09-19'};
   res.json(result);
 }
 
