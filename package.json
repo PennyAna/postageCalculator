@@ -5,7 +5,7 @@
   "engines": {
     "node": "12.x"
   },
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "test": "node test.js"
