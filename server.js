@@ -1,10 +1,10 @@
 const express = require('express')
 var app = express();
-app.use(express.static(_dirname + '/public'))
+app.use(express.static(__dirname + '/public'))
 app.set('port', (process.env.PORT || 5000))
 app.get('/getPerson', getPerson)
 app.set('view engine', 'ejs')
-apps.set('views', _dirname + '/views')
+apps.set('views', __dirname + '/views')
 app.get('/', (req, res) => res.render('pages/index'))
 app.get('/db', async (req, res) => {
     try {
