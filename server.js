@@ -16,6 +16,16 @@ app.get('/db', async (req, res) => {
         res.send("Error " + err);
     }
 })
+.get('postage', (req, res) => res.send('public/postage.html'))
+  .get('postjs', (req, res) => res.send('public/stylesheets/postage.js'))
+  .get('postcss', (req, res) => res.send('public/postage.css'))
+  .get('/price', (req, res) => {
+	res.render('public/price.js', {
+    stampedLetter: stampedLetter, 
+    meteredLetter: meteredLetter, 
+    largeEnvelope: largeEnvelope, 
+    packageService: packageService
+   })})	  
 const {Pool} = require('pg');
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL, 
