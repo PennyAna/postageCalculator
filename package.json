@@ -3,7 +3,8 @@
   "version": "0.3.0",
   "description": "postal rates assignment",
   "engines": {
-    "node": "12.x"
+    "node": "12.x",
+    "npm": "1.2.25"
   },
   "main": "server.js",
   "scripts": {
