@@ -18,9 +18,6 @@ app.get('/db', async (req, res) => {
     }
 })
 
-
-
-
 app.listen(app.get('port'), function() {
   console.log('Now listening for connections on port: ', app.get('port'));
 });

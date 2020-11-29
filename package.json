@@ -5,7 +5,7 @@
   "engines": {
     "node": "12.x"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "node test.js"
@@ -26,7 +26,8 @@
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express", 
+    "pg"
   ],
   "license": "MIT"
 }
