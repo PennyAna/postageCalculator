@@ -16,8 +16,8 @@ function setInputMax(type) {
 
         var weightSet = document.createElement('fieldset');  
         weightSet.classList.add('postalSet');
-        weightDiv.setAttribute('id', 'weightDiv');
-        weightDiv.setAttribute('name', 'weightDiv')
+        weightSet.setAttribute('id', 'weightSet');
+        weightSet.setAttribute('name', 'weightSet');
         
         var weightDiv = document.createElement('div');    
         weightDiv.classList.add('postalDiv');
