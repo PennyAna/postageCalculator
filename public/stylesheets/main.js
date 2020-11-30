@@ -1,20 +1,10 @@
 var postal_type = document.getElementById('postalType').value;
-document.getElementById('typeBtn').addEventListener('click', checkForZero(postal_type));
+var tempBtn = document.getElementById('typeBtn');
+if (postal_type != 0) {
+    tempBtn.addEventListener('click', setInputMax(postal_type));
+}
 
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
-function checkForZero(type) {
-    if (type == 0) {
-       var weightDiv = document.createElement('div');    
-        weightDiv.classList.add('postalDiv');
-        weightDiv.setAttribute('id', 'weightDiv');
-        weightDiv.setAttribute('name', 'weightDiv'); 
-        var errorTxt = "Please select an option from the list and press submit.";
-        weightDiv.innerText = errorTxt;
-        document.getElementById('postalDiv').appendChild(weightDiv);
-    }
-    else {
-        setInputMax(type);
-}
 function setInputMax(type) {
         var weightForm = document.createElement('form');
         weightForm.classList.add('postalForm');
@@ -49,7 +39,6 @@ function setInputMax(type) {
         weightDiv.appendChild(postalWeight); 
         weightDiv.appendChild(weightBtn);
         document.getElementById('postalDiv').appendChild(weightDiv);
-    }
 }
     //creates postal weight input element (max, step depend on type passed)
 function getWeightInput(type) {
