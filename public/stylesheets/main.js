@@ -1,5 +1,5 @@
-var postal_type = document.getElementById('postalType').value;
-document.getElementById('postalType').addEventListener('selectionchange', setInputMax(postal_type));
+var postal_type = document.getElementById('postalType').;
+postal_type.addEventListener('selectionchange', setInputMax(target.value));
 // document.getElementById('typeBtn').addEventListener('', setInputMax(postal_type));
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
