@@ -1,7 +1,6 @@
 var postal_type = document.getElementById('postalType').value;
-var postal_weight = document.getElementById('postalWeight').value; 
+
 document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type));
-document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
 
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
@@ -46,6 +45,9 @@ function getWeightInput(type) {
     }
     return postalWeight;
 }
+//vars created from new input element
+var postal_weight = document.getElementById('postalWeight').value; 
+document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
     var priceDiv = document.createElement('div');    
@@ -78,7 +80,7 @@ function getPostalPrice(weight) {
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
 }
-
+//called by getPostalPrice() using weight to determine final price for return
 function getLetterPrice(type, weight) {
     if (weight <= 1) {
         if (type == 1) {
@@ -99,6 +101,7 @@ function getLetterPrice(type, weight) {
     }
     return price;
 }
+//called by getPostalPrice() using weight to determine final price for return
 //this is a VERY, VERY nasty nested if situ, I will do the math to fix it later
 function getEnvPrice(weight) {
     if (weight <= 1) {
@@ -142,6 +145,7 @@ function getEnvPrice(weight) {
     }
     return price;
 }
+//called by getPostalPrice() using weight to determine final price for return
 function getPckgPrice(weight) {
     if (weight <= 4) {
         price = 3.8;
