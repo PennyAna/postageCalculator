@@ -4,6 +4,28 @@ document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_
 
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
+    if (postal_type == 0) {
+       var weightDiv = document.createElement('div');    
+        weightDiv.classList.add('postalDiv');
+        weightDiv.setAttribute('id', 'weightDiv');
+        weightDiv.setAttribute('name', 'weightDiv'); 
+        var errorTxt = "Please select an option from the list and press submit.";
+        weightDiv.innerText = `<p> ${errorTxt} </p>`;
+        document.getElementById('postalDiv').appendChild(weightDiv);
+        break;
+    }
+    var weightForm = document.createElement('form');
+    weightForm.classList.add('postalForm');
+    weightDiv.setAttribute('id', 'weightForm');
+    weightDiv.setAttribute('name', 'weightForm');
+    weightDiv.setAttribute('id', 'weightDiv');
+    weightDiv.setAttribute('name', 'weightDiv')
+
+    var weightSet = document.createElement('fieldset');  
+    weightSet.classList.add('postalSet');
+    weightDiv.setAttribute('id', 'weightDiv');
+    weightDiv.setAttribute('name', 'weightDiv')
+    
     var weightDiv = document.createElement('div');    
     weightDiv.classList.add('postalDiv');
     weightDiv.setAttribute('id', 'weightDiv');
@@ -21,11 +43,9 @@ function setInputMax(type) {
     weightBtn.innerText = "Get Price";
 
     var postalWeight = getWeightInput(type);
-
     weightDiv.appendChild(weightLabel);
     weightDiv.appendChild(postalWeight); 
     weightDiv.appendChild(weightBtn);
-    
     document.getElementById('postalDiv').appendChild(weightDiv);
 }
 //creates postal weight input element (max, step depend on type passed)
