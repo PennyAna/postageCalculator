@@ -69,8 +69,11 @@ function getWeightInput(type) {
     return postalWeight;
 }
 //vars created from new input element
-var postal_weight = document.getElementById('postalWeight').value; 
-document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
+if (postal_weight != null) {
+    var postal_weight = document.getElementById('postalWeight').value; 
+    document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
+}
+
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
     var priceDiv = document.createElement('div');    
