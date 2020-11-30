@@ -36,6 +36,7 @@ function setInputMax(type) {
             var postalWeight = getWeightInput(13, 1);
         }
         weightDiv.appendChild(weightForm);
+        weightDiv.appendChild(weightSet);
         weightDiv.appendChild(weightLabel);
         weightDiv.appendChild(weightLabel);
         weightDiv.appendChild(postalWeight); 
