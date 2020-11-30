@@ -5,7 +5,6 @@ console.log(postal_type, postal_weight);
 //input min=0, max=depends on type, step=1
 document.getElementById('postalType').addEventListener('change', setInputMax(postal_type));
 document.getElementById('postalWeight').addEventListener('change', getPostalPrice(postal_weight));
-
 var set_max = postal_weight.setAttribute('max');
 var set_step = postal_weight.setAttribute('step');
 
@@ -22,7 +21,7 @@ function setInputMax(type) {
     }
 }
 function getPostalPrice(weight) {
-    var type = p_type;
+    var type = postal_type;
     var finalPrice = "";
     switch(type) {
         case 1: 
