@@ -14,41 +14,43 @@ function setInputMax(type) {
         document.getElementById('postalDiv').appendChild(weightDiv);
         return;
     }
-    var weightForm = document.createElement('form');
-    weightForm.classList.add('postalForm');
-    weightDiv.setAttribute('id', 'weightForm');
-    weightDiv.setAttribute('name', 'weightForm');
-    weightDiv.setAttribute('id', 'weightDiv');
-    weightDiv.setAttribute('name', 'weightDiv')
+    else {
+        var weightForm = document.createElement('form');
+        weightForm.classList.add('postalForm');
+        weightDiv.setAttribute('id', 'weightForm');
+        weightDiv.setAttribute('name', 'weightForm');
+        weightDiv.setAttribute('id', 'weightDiv');
+        weightDiv.setAttribute('name', 'weightDiv')
 
-    var weightSet = document.createElement('fieldset');  
-    weightSet.classList.add('postalSet');
-    weightDiv.setAttribute('id', 'weightDiv');
-    weightDiv.setAttribute('name', 'weightDiv')
-    
-    var weightDiv = document.createElement('div');    
-    weightDiv.classList.add('postalDiv');
-    weightDiv.setAttribute('id', 'weightDiv');
-    weightDiv.setAttribute('name', 'weightDiv');
-    
-    var weightLabel = document.createElement('label');
-    weightLabel.setAttribute('for', 'postalWeight');
-    weightLabel.innerText = 'How heavy is your mail?';
-    weightLabel.classList.add('postalLabel');
-    
-    var weightBtn = document.createElement('button');
-    weightBtn.setAttribute('id', 'weightBtn');
-    weightBtn.setAttribute('name', 'weightBtn');
-    weightBtn.classList.add('postalBtn');
-    weightBtn.innerText = "Get Price";
+        var weightSet = document.createElement('fieldset');  
+        weightSet.classList.add('postalSet');
+        weightDiv.setAttribute('id', 'weightDiv');
+        weightDiv.setAttribute('name', 'weightDiv')
+        
+        var weightDiv = document.createElement('div');    
+        weightDiv.classList.add('postalDiv');
+        weightDiv.setAttribute('id', 'weightDiv');
+        weightDiv.setAttribute('name', 'weightDiv');
+        
+        var weightLabel = document.createElement('label');
+        weightLabel.setAttribute('for', 'postalWeight');
+        weightLabel.innerText = 'How heavy is your mail?';
+        weightLabel.classList.add('postalLabel');
+        
+        var weightBtn = document.createElement('button');
+        weightBtn.setAttribute('id', 'weightBtn');
+        weightBtn.setAttribute('name', 'weightBtn');
+        weightBtn.classList.add('postalBtn');
+        weightBtn.innerText = "Get Price";
 
-    var postalWeight = getWeightInput(type);
-    weightDiv.appendChild(weightLabel);
-    weightDiv.appendChild(postalWeight); 
-    weightDiv.appendChild(weightBtn);
-    document.getElementById('postalDiv').appendChild(weightDiv);
+        var postalWeight = getWeightInput(type);
+        weightDiv.appendChild(weightLabel);
+        weightDiv.appendChild(postalWeight); 
+        weightDiv.appendChild(weightBtn);
+        document.getElementById('postalDiv').appendChild(weightDiv);
+    }
 }
-//creates postal weight input element (max, step depend on type passed)
+    //creates postal weight input element (max, step depend on type passed)
 function getWeightInput(type) {
     var postalWeight = document.createElement('input');
     postalWeight.setAttribute('type', 'number');
@@ -59,7 +61,7 @@ function getWeightInput(type) {
         postalWeight.setAttribute('max', 3.5);
         postalWeight.setAttribute('step', .5);
     }
-    else if (type == 3 || type == 4) {
+    else if (type == 3 || type == 4) {            
         postalWeight.setAttribute('max', 13);
         postalWeight.setAttribute('step', '1');
     }
