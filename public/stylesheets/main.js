@@ -14,10 +14,10 @@ function setInputMax(type) {
         // var postalWeight = getWeightInput(3.5, .5);
     }
     else if (type == 3 || type == 4) {           
-        inner += "<input type='number' id='postalWeight' name='postalWeight' min=0 max=13 step=1>";
+        inner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
         // var postalWeight = getWeightInput(13, 1);
     }
-    inner += "<button></button></fieldset></form>";
+    inner += "<button id='weightBtn' name='weightBtn' value='Get Price'></button></fieldset></form>";
     document.getElementById("weightDiv").innerHTML = inner;
     console.log("Bubbles0");
     console.log(type);
