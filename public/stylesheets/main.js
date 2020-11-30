@@ -6,13 +6,15 @@ document.getElementById('postalWeight').addEventListener('select', getPostalPric
 
 function setInputMax(type) {
     switch(type) {
-        case 1, 2: 
-            document.getElementById('postalWeight').setAttribute('max', 3.5);
-            document.getElementById('postalWeight').setAttribute('step', .5);
+        case 1: 
+        case 2: 
+            document.getElementById('postalWeight').max = 3.5;
+            document.getElementById('postalWeight').step = .5;
             break;
-        case 3, 4:
-            document.getElementById('postalWeight').setAttribute('max', 13);
-            document.getElementById('postalWeight').setAttribute('step', .1);
+        case 3:
+        case 4:
+            document.getElementById('postalWeight').max = 13;
+            document.getElementById('postalWeight').step = 1;
             break;
     }
 }
