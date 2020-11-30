@@ -1,10 +1,9 @@
 var postal_type = document.getElementById('postalType').value;
-
-document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type));
+document.getElementById('typeBtn').addEventListener('click', checkForZero(postal_type));
 
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
-function setInputMax(type) {
-    if (postal_type == 0) {
+function checkForZero(type) {
+    if (type == 0) {
        var weightDiv = document.createElement('div');    
         weightDiv.classList.add('postalDiv');
         weightDiv.setAttribute('id', 'weightDiv');
@@ -12,9 +11,11 @@ function setInputMax(type) {
         var errorTxt = "Please select an option from the list and press submit.";
         weightDiv.innerText = errorTxt;
         document.getElementById('postalDiv').appendChild(weightDiv);
-        return;
     }
     else {
+        setInputMax(type);
+}
+function setInputMax(ty[e) {
         var weightForm = document.createElement('form');
         weightForm.classList.add('postalForm');
         weightDiv.setAttribute('id', 'weightForm');
@@ -68,10 +69,8 @@ function getWeightInput(type) {
     return postalWeight;
 }
 //vars created from new input element
-if (document.getElementById('postalWeight') != null) {
 var postal_weight = document.getElementById('postalWeight').value; 
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
-}
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
     var priceDiv = document.createElement('div');    
