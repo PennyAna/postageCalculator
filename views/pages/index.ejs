@@ -4,16 +4,24 @@
   <%- include ../partials/header %>
 </head>
 <body>
-<div class="jumbotron">
-  <h1>Postal Prices</h1>
-  <h2>US First Class</h2>
-</div>
-<div class="container">
-  <form id="postageInfo">
-    <%- include ../partials/postage_type %>
-    <%- include ../partials/postage_weight %>
-    <button id="postageBtn" type="button">Find Price</button>
-  </form>
-</div>
+  <div class="jumbotron">
+    <h1>Postal Prices</h1>
+    <h2>US First Class</h2>
+  </div>
+  <div class="container">
+    Welcome to the First Class Postal Prices Calculator
+    <hr>
+    Please choose the type of mail: 
+    <p id="askingForType">
+        <% include('partials/postage_type.ejs') %>
+    </p>
+  </div>
+  <div>
+    <p id="waitingForWeights">
+    </p>
+    <p id="waitingForPrice">
+    </p>
+  </div>
+  <script src="./stylesheets/main.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 const express = require('express')
+const html = require('html')
 var app = express();
 app.use(express.static(__dirname + '/public'))
 app.set('port', (process.env.PORT || 5000))
@@ -17,7 +18,6 @@ app.get('/db', async (req, res) => {
         res.send("Error " + err);
     }
 })
-app.get('/postage', (req, res) => res.render('public/postage.html'))
 
 const {Pool} = require('pg');
 const pool = new Pool({
