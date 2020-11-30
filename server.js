@@ -1,13 +1,14 @@
 const express = require('express')
 var app = express();
+var https = require('https');
+var http = require('http');
 
 app.use(express.static(__dirname + '/public'))
 app.set('port', (process.env.PORT || 5000))
-app.engine('html', require('ejs').renderFile())
-app.set('view engine', 'html')
+app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
-app.get('/', (req, res) => res.render('pages/index.ejs'))
-app.get('/db', async (req, res) => {
+app.get('/', function (req, res) { res.render('pages/index.html');})
+app.get('/db', async function(req, res) {
     try {
         const client = await pool.connect();
         const result = await client.query('SELECT * FROM test_table');
