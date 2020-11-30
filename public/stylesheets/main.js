@@ -116,6 +116,5 @@ function getPckgPrice(weight) {
                 }
             }
         }
-    }
     return price;
 }
