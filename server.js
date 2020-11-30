@@ -1,9 +1,11 @@
-const express = require('express')
-const path = require('path')
+const express = require('express');
+const path = require('path');
 var app = express();
-app.use(express.static(path.join(__dirname, '/public')))
-app.set('port', (process.env.PORT || 5000))
-app.set('view engine', 'ejs')
+app.use(express.static(path.join(__dirname, '/public')));
+app.set('port', (process.env.PORT || 5000));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 app.get('/', function (req, res) { res.render('public/index.html');})
 app.get('/db', async function(req, res) {
     try {
