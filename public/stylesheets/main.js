@@ -40,10 +40,10 @@ function setInputMax(type) {
             var postalWeight = getWeightInput(13, 1);
         }
         weightDiv.appendChild(weightForm);
-        weightDiv.appendChild(weightSet);
-        weightDiv.appendChild(weightLabel);
-        weightDiv.appendChild(postalWeight); 
-        weightDiv.appendChild(weightBtn);
+        weightForm.appendChild(weightSet);
+        weightForm.appendChild(postalWeight); 
+        postalWeight.appendChild(weightLabel);
+        weightForm.appendChild(weightBtn);
         document.body.appendChild(weightDiv);
         console.log("Bubbles1");
 }
