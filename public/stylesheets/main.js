@@ -1,4 +1,4 @@
-var postal_type = document.getElementById('postalType').options[options.selectedIndex].value;
+var postal_type = document.getElementById('postalType').value;
 
 var postal_weight = document.getElementById('postalWeight').value; 
 //input min=0, max=depends on type, step=1
