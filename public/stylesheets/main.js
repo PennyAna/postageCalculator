@@ -1,6 +1,6 @@
 var postal_type = document.getElementById('postalType').value;
 var tempBtn = document.getElementById('typeBtn');
-FormData.addEventListener('change', function() {
+tempBtn.addEventListener('click', function() {
     if (postal_type != 0) {
         tempBtn.addEventListener('click', setInputMax(postal_type));
 }})
