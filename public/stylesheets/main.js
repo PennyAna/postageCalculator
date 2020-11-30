@@ -52,8 +52,8 @@ function getWeightInput(max, step) {
     postalWeight.setAttribute('min', 0);
     postalWeight.setAttribute('max', max);
     postalWeight.setAttribute('step', step);    
-    return postalWeight;
     console.log("Bubbles3");
+    return postalWeight;
 }
 //vars created from new input element
 if (postal_weight != null) {
