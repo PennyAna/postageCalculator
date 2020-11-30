@@ -199,6 +199,7 @@ function getPckgPrice(weight) {
                 }
             }
         }
+    }
         console.log("Bubbles13");
     return price;
 }
