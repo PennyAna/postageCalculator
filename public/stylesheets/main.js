@@ -10,7 +10,7 @@ function setInputMax(type) {
         weightDiv.setAttribute('id', 'weightDiv');
         weightDiv.setAttribute('name', 'weightDiv'); 
         var errorTxt = "Please select an option from the list and press submit.";
-        weightDiv.innerText = `<p> ${errorTxt} </p>`;
+        weightDiv.innerText = errorTxt;
         document.getElementById('postalDiv').appendChild(weightDiv);
         return;
     }
