@@ -18,7 +18,7 @@ function setInputMax(type) {
     weightBtn.setAttribute('id', 'weightBtn');
     weightBtn.setAttribute('name', 'weightBtn');
     weightBtn.classList.add('postalBtn');
-    weightBtn.setAttribute('value','Get Price')
+    weightBtn.innerText = "Get Price";
 
     var postalWeight = getWeightInput(type);
 
