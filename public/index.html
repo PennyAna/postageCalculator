@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include('views/partials/header.ejs') %>
+  <%- include('partials/header') %>
 </head>
 <body>
   <div class="jumbotron">
@@ -13,7 +13,7 @@
     <hr>
     Please choose the type of mail: 
     <p id="askingForType">
-        <% include('views/partials/postage_type.ejs') %>
+        <%- include('partials/postage_type') %>
     </p>
   </div>
   <div>
