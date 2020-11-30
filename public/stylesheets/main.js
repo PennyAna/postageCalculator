@@ -12,7 +12,7 @@ function setInputMax(type) {
         var errorTxt = "Please select an option from the list and press submit.";
         weightDiv.innerText = `<p> ${errorTxt} </p>`;
         document.getElementById('postalDiv').appendChild(weightDiv);
-        break;
+        return;
     }
     var weightForm = document.createElement('form');
     weightForm.classList.add('postalForm');
