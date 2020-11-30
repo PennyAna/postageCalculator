@@ -26,7 +26,7 @@ function setInputMax(type) {
     weightDiv.appendChild(postalWeight); 
     weightDiv.appendChild(weightBtn);
     
-    document.getElementById('postalContainer').appendChild(weightDiv);
+    document.getElementById('postalDiv').appendChild(weightDiv);
 }
 //creates postal weight input element (max, step depend on type passed)
 function getWeightInput(type) {
