@@ -1,12 +1,5 @@
 var postal_type = document.getElementById('postalType').value;
-var tempBtn = document.getElementById('typeBtn');
-
-if (postal_type != 0) {
-        console.log('start of btn listener');
-        tempBtn.addEventListener('click', setInputMax(postal_type));
-    console.log('end of btn listener');
-}
-
+document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type));
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
         var weightForm = document.createElement('form');
@@ -34,28 +27,26 @@ function setInputMax(type) {
         weightBtn.setAttribute('name', 'weightBtn');
         weightBtn.classList.add('postalBtn');
         weightBtn.innerText = "Get Price";
-
-        var postalWeight = getWeightInput(type);
+        if (type == 1 || type == 2) {
+            var postalWeight = getWeightInput(3.5, .5);
+        }
+        else if (type == 3 || type == 4) {            
+            var postalWeight = getWeightInput(13, 1);
+        }
         weightDiv.appendChild(weightLabel);
         weightDiv.appendChild(postalWeight); 
         weightDiv.appendChild(weightBtn);
         document.getElementById('postalDiv').appendChild(weightDiv);
 }
-    //creates postal weight input element (max, step depend on type passed)
-function getWeightInput(type) {
+//creates postal weight input element (max, step depend on type passed)
+function getWeightInput(max, step) {
     var postalWeight = document.createElement('input');
     postalWeight.setAttribute('type', 'number');
     postalWeight.setAttribute('id', 'postalWeight');
     postalWeight.setAttribute('name', 'postalWeight');
     postalWeight.setAttribute('min', 0);
-    if (type == 1 || type == 2) {
-        postalWeight.setAttribute('max', 3.5);
-        postalWeight.setAttribute('step', .5);
-    }
-    else if (type == 3 || type == 4) {            
-        postalWeight.setAttribute('max', 13);
-        postalWeight.setAttribute('step', '1');
-    }
+    postalWeight.setAttribute('max', max);
+    postalWeight.setAttribute('step', step);    
     return postalWeight;
 }
 //vars created from new input element
