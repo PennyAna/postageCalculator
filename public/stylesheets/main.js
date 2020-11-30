@@ -38,10 +38,9 @@ function setInputMax(type) {
         weightDiv.appendChild(weightForm);
         weightDiv.appendChild(weightSet);
         weightDiv.appendChild(weightLabel);
-        weightDiv.appendChild(weightLabel);
         weightDiv.appendChild(postalWeight); 
         weightDiv.appendChild(weightBtn);
-        document.getElementById('postalDiv').appendChild(weightDiv);
+        document.body.appendChild(weightDiv);
         console.log("Bubbles1");
 }
 //creates postal weight input element (max, step depend on type passed)
