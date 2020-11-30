@@ -5,8 +5,11 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.set('port', (process.env.PORT || 5000));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
-app.get('/', function (req, res) { res.render('public/index.html');})
+app.set('views', path.join(__dirname, '/views'));
+app.get('/', function (req, res) { res.render('pages/index.ejs');})
+app.get('/postage', function (req, res) {
+    res.render('public/postage.html');
+});
 app.get('/db', async function(req, res) {
     try {
         const client = await pool.connect();
