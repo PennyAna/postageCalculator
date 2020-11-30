@@ -6,9 +6,22 @@ console.log(document.getElementById("postalType"));
 // document.getElementById('typeBtn').addEventListener('', setInputMax(postal_type));
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
-        console.log("Bubbles0");
-        console.log(type);
-        var weightForm = document.createElement('form');
+    var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
+    inner += "<fieldset id='weightSet' name='weightSet' class='postalSet'>";
+    inner += "<label for='postalWeight' value='How heavy is your mail?' class='postalLabel'></label>";
+    if (type == 1 || type == 2) {
+        inner += "<input type='number' id='postalWeight' name='postalWeight' min=0 max=3.5 step=.5>";
+        // var postalWeight = getWeightInput(3.5, .5);
+    }
+    else if (type == 3 || type == 4) {           
+        inner += "<input type='number' id='postalWeight' name='postalWeight' min=0 max=13 step=1>";
+        // var postalWeight = getWeightInput(13, 1);
+    }
+    inner += "<button></button></fieldset></form>";
+    document.getElementById("weightDiv").innerHTML = inner;
+    console.log("Bubbles0");
+    console.log(type);
+        /* var weightForm = document.createElement('form');
         weightForm.classList.add('postalForm');
         weightForm.setAttribute('id', 'weightForm');
         weightForm.setAttribute('name', 'weightForm');
@@ -59,7 +72,7 @@ function getWeightInput(max, step) {
     postalWeight.setAttribute('step', step);    
     console.log("Bubbles3");
     return postalWeight;
-}
+} */
 //vars created from new input element
 if (postal_weight != null) {
     console.log("Bubbles4");
