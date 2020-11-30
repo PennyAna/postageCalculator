@@ -2,11 +2,11 @@ const express = require('express')
 var app = express();
 var https = require('https');
 var http = require('http');
+var html = require('html');
 
 app.use(express.static(__dirname + '/public'))
 app.set('port', (process.env.PORT || 5000))
 app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views')
 app.get('/', function (req, res) { res.render('pages/index.html');})
 app.get('/db', async function(req, res) {
     try {
