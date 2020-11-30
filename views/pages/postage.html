@@ -9,20 +9,31 @@
     <h1>Postal Prices</h1>
     <h2>US First Class</h2>
   </div>
-  <div class="container">
-    Welcome to the First Class Postal Prices Calculator
+  <label for="postalContainer">Welcome to the First Class Postal Prices Calculator</label>
+  <div id="postalDiv" class="container">
     <hr>
-    Please choose the type of mail: 
-    <p id="askingForType">
-        <%- include('../partials/postage_type.ejs') %>
-    </p>
-  </div>
-  <div>
-    <p id="waitingForWeights">
-      <%- include('../partials/postage_weight.ejs') %>
-    </p>
-    <p id="waitingForPrice">
-    </p>
+    <label for="askingForType" class="postalLabel"> Please choose the type of mail:</label>
+      <form id="askingForType">
+        <fieldset>
+            <legend>Type</legend> 
+            <label for="postalType">What type is your mail?</label>
+            <select name="postalType" id="postalType">
+                <option 
+                    id="stampedLetter" name="stampedLetter" value="1">First Class Letter-Stamped
+                </option>
+                <option 
+                    id="meteredLetter" name="meteredLetter" value="2">First Class Letter-Metered
+                </option>
+                <option 
+                    id="largeEnvelope" name="largeEnvelope" value="3">First Class Large Envelopes
+                </option>
+                <option 
+                    id="packageService" name="packageService" value="4">First Class Package Service-Retail
+                </option>
+            </select>
+            <input type="button" id="typeBtn" name="typeBtn" value="Submit Type" class="postalBtn">
+        </fieldset>
+    </form>           
   </div>
   <script src="./stylesheets/main.js"></script>
 </body>
