@@ -11,10 +11,8 @@ if (postal_type != 0) {
 function setInputMax(type) {
         var weightForm = document.createElement('form');
         weightForm.classList.add('postalForm');
-        weightDiv.setAttribute('id', 'weightForm');
-        weightDiv.setAttribute('name', 'weightForm');
-        weightDiv.setAttribute('id', 'weightDiv');
-        weightDiv.setAttribute('name', 'weightDiv')
+        weightForm.setAttribute('id', 'weightForm');
+        weightForm.setAttribute('name', 'weightForm');
 
         var weightSet = document.createElement('fieldset');  
         weightSet.classList.add('postalSet');
