@@ -15,7 +15,7 @@ function checkForZero(type) {
     else {
         setInputMax(type);
 }
-function setInputMax(ty[e) {
+function setInputMax(type) {
         var weightForm = document.createElement('form');
         weightForm.classList.add('postalForm');
         weightDiv.setAttribute('id', 'weightForm');
