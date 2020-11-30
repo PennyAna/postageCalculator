@@ -2,7 +2,9 @@ var postal_type = document.getElementById('postalType').value;
 var tempBtn = document.getElementById('typeBtn');
 tempBtn.addEventListener('click', function() {
     if (postal_type != 0) {
+        console.log('start of btn listener');
         tempBtn.addEventListener('click', setInputMax(postal_type));
+    console.log('end of btn listener');
 }})
 
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
