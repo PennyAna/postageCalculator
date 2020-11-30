@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include('partials/header') %>
+  <% include ../partials/header.ejs %>
 </head>
 <body>
+  <% include ../partials/nav.ejs %>
   <div class="jumbotron">
     <h1>Postal Prices</h1>
     <h2>US First Class</h2>
@@ -13,7 +14,7 @@
     <hr>
     Please choose the type of mail: 
     <p id="askingForType">
-        <%- include('partials/postage_type') %>
+        <%- include ../partials/postage_type.ejs') %>
     </p>
   </div>
   <div>
