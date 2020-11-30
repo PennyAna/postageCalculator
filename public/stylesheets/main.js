@@ -2,6 +2,7 @@ var postal_type = document.getElementById('postalType').value;
 document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type));
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
+        console.log("Bubbles0");
         var weightForm = document.createElement('form');
         weightForm.classList.add('postalForm');
         weightForm.setAttribute('id', 'weightForm');
@@ -37,9 +38,11 @@ function setInputMax(type) {
         weightDiv.appendChild(postalWeight); 
         weightDiv.appendChild(weightBtn);
         document.getElementById('postalDiv').appendChild(weightDiv);
+        console.log("Bubbles1");
 }
 //creates postal weight input element (max, step depend on type passed)
 function getWeightInput(max, step) {
+    console.log("Bubbles2");
     var postalWeight = document.createElement('input');
     postalWeight.setAttribute('type', 'number');
     postalWeight.setAttribute('id', 'postalWeight');
@@ -48,15 +51,19 @@ function getWeightInput(max, step) {
     postalWeight.setAttribute('max', max);
     postalWeight.setAttribute('step', step);    
     return postalWeight;
+    console.log("Bubbles3");
 }
 //vars created from new input element
 if (postal_weight != null) {
+    console.log("Bubbles4");
     var postal_weight = document.getElementById('postalWeight').value; 
     document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
+    console.log("Bubbles5");
 }
 
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
+    console.log("Bubbles6");
     var priceDiv = document.createElement('div');    
     priceDiv.classList.add('postalDiv');
     priceDiv.setAttribute('id', 'priceDiv');
@@ -86,9 +93,11 @@ function getPostalPrice(weight) {
     pPrice.innerText = `Your Price for ${postal_type} with ${weightNum}: $ ${finalPrice};`
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
+    console.log("Bubbles7")
 }
 //called by getPostalPrice() using weight to determine final price for return
 function getLetterPrice(type, weight) {
+    console.log("Bubbles8");
     if (weight <= 1) {
         if (type == 1) {
             price = .55;
@@ -106,11 +115,13 @@ function getLetterPrice(type, weight) {
             }
         } 
     }
+    console.log("Bubbles9")
     return price;
 }
 //called by getPostalPrice() using weight to determine final price for return
 //this is a VERY, VERY nasty nested if situ, I will do the math to fix it later
 function getEnvPrice(weight) {
+    console.log("Bubbles10")
     if (weight <= 1) {
         price = 1;
         if (weight <= 2) {
@@ -150,10 +161,12 @@ function getEnvPrice(weight) {
             }
         } 
     }
+    console.log("Bubbles11");
     return price;
 }
 //called by getPostalPrice() using weight to determine final price for return
 function getPckgPrice(weight) {
+    console.log("Bubbles12");
     if (weight <= 4) {
         price = 3.8;
         if (weight <= 8) {
@@ -166,5 +179,6 @@ function getPckgPrice(weight) {
                 }
             }
         }
+        console.log("Bubbles13");
     return price;
 }
