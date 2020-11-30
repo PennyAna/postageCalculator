@@ -1,9 +1,10 @@
 const express = require('express')
-const html = require('html')
 var app = express();
+
 app.use(express.static(__dirname + '/public'))
 app.set('port', (process.env.PORT || 5000))
-app.set('view engine', 'ejs')
+app.engine('html', require('ejs').renderFile())
+app.set('view engine', 'html');
 app.set('views', __dirname + '/views')
 app.get('/', (req, res) => res.render('pages/index.ejs'))
 app.get('/db', async (req, res) => {
