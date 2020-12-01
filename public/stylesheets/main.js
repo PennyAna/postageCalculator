@@ -7,7 +7,13 @@ document.getElementById('postalType').addEventListener('selectionchange', functi
                 }
 );
 document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_choice));
-var postal_weight = document.getElementById('postalWeight').value;
+var postal_weight_init = '';
+var postal_weight = '';
+document.getElementById('postalWeight').addEventListener('change', function() {
+                    postal_weight_init = document.getElementById('postalWeight');
+                    postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
+                }
+);
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
 console.log("Bubbles5");
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
