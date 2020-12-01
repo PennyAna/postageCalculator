@@ -21,6 +21,7 @@ function setInputMax(type) {
             // var postalWeight = getWeightInput(13, 1);
             break;
     }
+    document.getElementById('postalP').innerHTML = inner;
 }
 document.getElementById('postalWeight').addEventListener('change', function() {
     postal_weight_init = document.getElementById('postalWeight');
