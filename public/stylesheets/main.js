@@ -1,4 +1,3 @@
-
 var postal_type = '';
 var postal_choice = '';
 document.getElementById('postalType').addEventListener('selectionchange', function() {
@@ -11,34 +10,25 @@ var postal_weight_init = '';
 var postal_weight = '';
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
-    var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
-    inner += "<fieldset id='weightSet' name='weightSet' class='postalSet'>";
-    inner += "<label for='postalWeight' class='postalLabel' value='Weight'>How heavy is your mail? </label>";
-    var inputInner = '';
+    var inner = '';
     switch(Number(type)) {
         case 1, 2:
-            inputInner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
+            inner += "<input type='number' id='postalWeight' name='postalWeight' min=0 max=3.5 step=.5>";
             // var postalWeight = getWeightInput(3.5, .5);
             break;
-        case 3, 4:
-            inputInner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
+      case 3, 4:
+            inner += "<input type='number' id='postalWeight' name='postalWeight' min=0 max=13 step=1>";
             // var postalWeight = getWeightInput(13, 1);
             break;
     }
-    inner += inputInner;
-    inner += "<button id='weightBtn' name='weightBtn'>Get Price</button></fieldset></form>";
-    document.getElementById("weightDiv").innerHTML = inner;
-    console.log("Bubbles0");
-    console.log(type);
-    document.getElementById('postalWeight').addEventListener('change', function() {
-        postal_weight_init = document.getElementById('postalWeight');
-        postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
-        }
-    );
+}
+document.getElementById('postalWeight').addEventListener('change', function() {
+    postal_weight_init = document.getElementById('postalWeight');
+    postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
+    }
+);
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
 console.log("Bubbles5");
-}
-
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
     console.log("Bubbles6");
