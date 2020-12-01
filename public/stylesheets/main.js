@@ -93,7 +93,7 @@ function getPostalPrice(weight) {
     var weightNum = Number(postal_weight);
     
     var type = postal_type;
-    var finalPrice = "";
+    var finalPrice = 0;
     switch(type) {
         case 1: 
         case 2: 
@@ -107,7 +107,7 @@ function getPostalPrice(weight) {
             break;
     }
     
-    pPrice.innerText = `Your Price for ${postal_type} with ${weightNum}: $ ${finalPrice};`
+    pPrice.innerText = `Your Price for ${postal_type} with ${weightNum}: $ ${finalPrice}`;
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
     console.log("Bubbles7")
@@ -197,7 +197,6 @@ function getPckgPrice(weight) {
                 }
             }
         }
-    }
         console.log("Bubbles13");
-    return price;
-}
+        return price;
+    }
