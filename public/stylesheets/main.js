@@ -8,7 +8,7 @@ console.log("Bubbles5");
 function setInputMax(type) {
     var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
     inner += "<fieldset id='weightSet' name='weightSet' class='postalSet'>";
-    inner += "<label for='postalWeight' class='postalLabel'>'How heavy is your mail?'</label>";
+    inner += "<label for='postalWeight' class='postalLabel'>How heavy is your mail? </label>";
     if (type == 1 || type == 2) {
         inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
         // var postalWeight = getWeightInput(3.5, .5);
