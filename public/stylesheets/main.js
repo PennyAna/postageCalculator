@@ -13,17 +13,19 @@ var postal_weight = '';
 function setInputMax(type) {
     var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
     inner += "<fieldset id='weightSet' name='weightSet' class='postalSet'>";
-    inner += "<label for='postalWeight' class='postalLabel'>How heavy is your mail? </label>";
-    switch(type) {
+    inner += "<label for='postalWeight' class='postalLabel' value='Weight'>How heavy is your mail? </label>";
+    var inputInner = '';
+    switch(Number(type)) {
         case 1, 2:
-            inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
+            inputInner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
             // var postalWeight = getWeightInput(3.5, .5);
             break;
         case 3, 4:
-            inner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
+            inputInner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
             // var postalWeight = getWeightInput(13, 1);
             break;
     }
+    inner += inputInner;
     inner += "<button id='weightBtn' name='weightBtn'>Get Price</button></fieldset></form>";
     document.getElementById("weightDiv").innerHTML = inner;
     console.log("Bubbles0");
