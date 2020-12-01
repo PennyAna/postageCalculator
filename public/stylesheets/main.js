@@ -2,6 +2,10 @@ var postal_type = document.getElementById('postalType');
 document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type.value));
 console.log(postal_type);
 console.log(document.getElementById("postalType"));
+console.log("Bubbles4");
+var postal_weight = document.getElementById('postalWeight');
+document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight.value));
+console.log("Bubbles5");
 
 // document.getElementById('typeBtn').addEventListener('', setInputMax(postal_type));
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
@@ -74,14 +78,6 @@ function getWeightInput(max, step) {
     console.log("Bubbles3");
     return postalWeight;
 } */
-//vars created from new input element
-if (postal_weight != null) {
-    console.log("Bubbles4");
-    var postal_weight = document.getElementById('postalWeight').value; 
-    document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
-    console.log("Bubbles5");
-}
-
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
     console.log("Bubbles6");
