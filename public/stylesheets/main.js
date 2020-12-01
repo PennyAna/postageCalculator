@@ -1,5 +1,5 @@
 var postal_type = document.getElementById('postalType');
-postal_type.addEventListener('selectionchange', setInputMax(postal_type.value));
+document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type.value));
 console.log(postal_type);
 console.log(document.getElementById("postalType"));
 
@@ -21,6 +21,7 @@ function setInputMax(type) {
     document.getElementById("weightDiv").innerHTML = inner;
     console.log("Bubbles0");
     console.log(type);
+}
         /* var weightForm = document.createElement('form');
         weightForm.classList.add('postalForm');
         weightForm.setAttribute('id', 'weightForm');
