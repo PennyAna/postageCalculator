@@ -10,14 +10,14 @@ function setInputMax(type) {
     inner += "<fieldset id='weightSet' name='weightSet' class='postalSet'>";
     inner += "<label for='postalWeight' value='How heavy is your mail?' class='postalLabel'></label>";
     if (type == 1 || type == 2) {
-        inner += "<input type='number' id='postalWeight' name='postalWeight' min=0 max=3.5 step=.5>";
+        inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
         // var postalWeight = getWeightInput(3.5, .5);
     }
     else if (type == 3 || type == 4) {           
         inner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
         // var postalWeight = getWeightInput(13, 1);
     }
-    inner += "<button id='weightBtn' name='weightBtn' value='Get Price'></button></fieldset></form>";
+    inner += "<button id='weightBtn' name='weightBtn'>Get Price</button></fieldset></form>";
     document.getElementById("weightDiv").innerHTML = inner;
     console.log("Bubbles0");
     console.log(type);
