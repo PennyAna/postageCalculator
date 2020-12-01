@@ -34,24 +34,23 @@ function getPostalPrice(weight) {
     pPrice.setAttribute('class', 'finalPrice');
     pPrice.setAttribute('id', 'finalPrice');
     pPrice.setAttribute('name', 'finalPrice');
-    var weightNum = Number(postal_weight);
+    var weightNum = postal_weight;
     
     var type = postal_choice;
     var finalPrice = 0;
     switch(type) {
-        case 1: 
-        case 2: 
+        case 1, 2:
             finalPrice = getLetterPrice(type, weight);
             break;
-        case 3: 
+        case 3:
             finalPrice = getEnvPrice(weight);
             break;
-        case 4: 
+        case 4:
             finalPrice = getPckgPrice(weight);
             break;
     }
     
-    pPrice.innerText = "Your Price for " + String(postal_choice) + "with " + Number(weightNum) + ": $" + Number(finalPrice);
+    pPrice.innerText = "Your Price for " + String(postal_choice.innerText) + "with " + Number(weightNum) + ": $" + Number(finalPrice);
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
     console.log("Bubbles7")
