@@ -1,4 +1,4 @@
-var postal_type = document.getElementById('postalType').options[options.selectedIndex];
+var postal_type = document.getElementById('postalType');
 document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type));
 var postal_weight = document.getElementById('postalWeight');
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight.value));
