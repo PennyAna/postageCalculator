@@ -1,5 +1,11 @@
-var postal_type = document.getElementById('postalType');
-var postal_choice = postal_type.options[postal_type.selectedIndex].value;
+
+var postal_type = '';
+var postal_choice = '';
+document.getElementById('postalType').addEventListener('selectionchange', function() {
+                    postal_type = document.getElementById('postalType');
+                    postal_choice = postal_type.options[postal_type.selectedIndex].value;
+                }
+);
 document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_choice));
 var postal_weight = document.getElementById('postalWeight');
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
