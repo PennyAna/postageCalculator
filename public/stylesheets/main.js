@@ -1,11 +1,9 @@
 var postal_type = document.getElementById('postalType');
 var postal_choice = postal_type.options[postal_type.selectedIndex].value;
-document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type));
+document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_choice));
 var postal_weight = document.getElementById('postalWeight');
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
 console.log("Bubbles5");
-
-// document.getElementById('typeBtn').addEventListener('', setInputMax(postal_type));
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
     var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
@@ -15,7 +13,7 @@ function setInputMax(type) {
         inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
         // var postalWeight = getWeightInput(3.5, .5);
     }
-    else if (type == 3 || type == 4) {           
+    else (type == 3 || type == 4) {           
         inner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
         // var postalWeight = getWeightInput(13, 1);
     }
@@ -24,58 +22,6 @@ function setInputMax(type) {
     console.log("Bubbles0");
     console.log(type);
 }
-        /* var weightForm = document.createElement('form');
-        weightForm.classList.add('postalForm');
-        weightForm.setAttribute('id', 'weightForm');
-        weightForm.setAttribute('name', 'weightForm');
-
-        var weightSet = document.createElement('fieldset');  
-        weightSet.classList.add('postalSet');
-        weightSet.setAttribute('id', 'weightSet');
-        weightSet.setAttribute('name', 'weightSet');
-        
-        var weightDiv = document.createElement('div');    
-        weightDiv.classList.add('postalDiv');
-        weightDiv.setAttribute('id', 'weightDiv');
-        weightDiv.setAttribute('name', 'weightDiv');
-        
-        var weightLabel = document.createElement('label');
-        weightLabel.setAttribute('for', 'postalWeight');
-        weightLabel.innerText = 'How heavy is your mail?';
-        weightLabel.classList.add('postalLabel');
-        
-        var weightBtn = document.createElement('button');
-        weightBtn.setAttribute('id', 'weightBtn');
-        weightBtn.setAttribute('name', 'weightBtn');
-        weightBtn.classList.add('postalBtn');
-        weightBtn.innerText = "Get Price";
-        if (type == 1 || type == 2) {
-            var postalWeight = getWeightInput(3.5, .5);
-        }
-        else if (type == 3 || type == 4) {            
-            var postalWeight = getWeightInput(13, 1);
-        }
-        weightDiv.appendChild(weightForm);
-        weightForm.appendChild(weightSet);
-        weightForm.appendChild(postalWeight); 
-        postalWeight.appendChild(weightLabel);
-        weightForm.appendChild(weightBtn);
-        document.body.appendChild(weightDiv);
-        console.log("Bubbles1");
-}
-//creates postal weight input element (max, step depend on type passed)
-function getWeightInput(max, step) {
-    console.log("Bubbles2");
-    var postalWeight = document.createElement('input');
-    postalWeight.setAttribute('type', 'number');
-    postalWeight.setAttribute('id', 'postalWeight');
-    postalWeight.setAttribute('name', 'postalWeight');
-    postalWeight.setAttribute('min', 0);
-    postalWeight.setAttribute('max', max);
-    postalWeight.setAttribute('step', step);    
-    console.log("Bubbles3");
-    return postalWeight;
-} */
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
     console.log("Bubbles6");
@@ -191,10 +137,10 @@ function getPckgPrice(weight) {
                 price += 1.5;
                 if (weight <= 13) {
                     price += .6;
-                    }
                 }
             }
         }
+    }
         console.log("Bubbles13");
         return price;
-    }
+}
