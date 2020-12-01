@@ -9,7 +9,7 @@ console.log("Bubbles5");
 function setInputMax(type) {
     var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
     inner += "<fieldset id='weightSet' name='weightSet' class='postalSet'>";
-    inner += "<label for='postalWeight' value='How heavy is your mail?' class='postalLabel'></label>What is the weight of your mail?";
+    inner += "<label for='postalWeight' class='postalLabel'>'How heavy is your mail?'</label>";
     if (type == 1 || type == 2) {
         inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
         // var postalWeight = getWeightInput(3.5, .5);
@@ -104,7 +104,7 @@ function getPostalPrice(weight) {
             break;
     }
     
-    pPrice.innerText = `Your Price for ${postal_type} with ${weightNum}: $ ${finalPrice}`;
+    pPrice.innerText = "Your Price for " + JSON.stringify(postal_type) + "with " Number(weightNum) ": $" + Number(finalPrice);
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
     console.log("Bubbles7")
