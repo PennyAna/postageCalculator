@@ -104,7 +104,7 @@ function getPostalPrice(weight) {
             break;
     }
     
-    pPrice.innerText = "Your Price for " + JSON.stringify(postal_type) + "with " Number(weightNum) ": $" + Number(finalPrice);
+    pPrice.innerText = "Your Price for " + JSON.stringify(postal_type) + "with " + Number(weightNum) + ": $" + Number(finalPrice);
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
     console.log("Bubbles7")
