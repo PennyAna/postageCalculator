@@ -1,8 +1,5 @@
 var postal_type = document.getElementById('postalType');
 document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_type.value));
-console.log(postal_type);
-console.log(document.getElementById("postalType"));
-console.log("Bubbles4");
 var postal_weight = document.getElementById('postalWeight');
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight.value));
 console.log("Bubbles5");
