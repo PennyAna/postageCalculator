@@ -7,6 +7,8 @@ document.getElementById('postalType').addEventListener('selectionchange', functi
                 }
 );
 document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_choice));
+var postal_weight_init = '';
+var postal_weight = '';
 //creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
 function setInputMax(type) {
     var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
@@ -24,16 +26,15 @@ function setInputMax(type) {
     document.getElementById("weightDiv").innerHTML = inner;
     console.log("Bubbles0");
     console.log(type);
-}
-var postal_weight_init = '';
-var postal_weight = '';
-document.getElementById('postalWeight').addEventListener('change', function() {
-                    postal_weight_init = document.getElementById('postalWeight');
-                    postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
-                }
-);
+    document.getElementById('postalWeight').addEventListener('change', function() {
+        postal_weight_init = document.getElementById('postalWeight');
+        postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
+        }
+    );
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
 console.log("Bubbles5");
+}
+
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
     console.log("Bubbles6");
