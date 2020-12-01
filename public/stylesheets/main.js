@@ -8,7 +8,7 @@ console.log(document.getElementById("postalType"));
 function setInputMax(type) {
     var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
     inner += "<fieldset id='weightSet' name='weightSet' class='postalSet'>";
-    inner += "<label for='postalWeight' value='How heavy is your mail?' class='postalLabel'></label>";
+    inner += "<label for='postalWeight' value='How heavy is your mail?' class='postalLabel'></label>What is the weight of your mail?";
     if (type == 1 || type == 2) {
         inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
         // var postalWeight = getWeightInput(3.5, .5);
@@ -187,6 +187,7 @@ function getEnvPrice(weight) {
 //called by getPostalPrice() using weight to determine final price for return
 function getPckgPrice(weight) {
     console.log("Bubbles12");
+    var price = 0;
     if (weight <= 4) {
         price = 3.8;
         if (weight <= 8) {
