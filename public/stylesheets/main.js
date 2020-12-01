@@ -14,13 +14,15 @@ function setInputMax(type) {
     var inner = "<form id='weightForm' name='weightForm' class='postalForm'>";
     inner += "<fieldset id='weightSet' name='weightSet' class='postalSet'>";
     inner += "<label for='postalWeight' class='postalLabel'>How heavy is your mail? </label>";
-    if (type == 1 || type == 2) {
-        inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
-        // var postalWeight = getWeightInput(3.5, .5);
-    }
-    if (type == 3 || type == 4) {           
-        inner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
-        // var postalWeight = getWeightInput(13, 1);
+    switch(type) {
+        case 1, 2:
+            inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
+            // var postalWeight = getWeightInput(3.5, .5);
+            break;
+        case 3, 4:
+            inner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
+            // var postalWeight = getWeightInput(13, 1);
+            break;
     }
     inner += "<button id='weightBtn' name='weightBtn'>Get Price</button></fieldset></form>";
     document.getElementById("weightDiv").innerHTML = inner;
