@@ -36,7 +36,7 @@ function getPostalPrice(weight) {
     pPrice.setAttribute('name', 'finalPrice');
     var weightNum = Number(postal_weight);
     
-    var type = postal_type;
+    var type = postal_choice;
     var finalPrice = 0;
     switch(type) {
         case 1: 
@@ -51,7 +51,7 @@ function getPostalPrice(weight) {
             break;
     }
     
-    pPrice.innerText = "Your Price for " + String(postal_type) + "with " + Number(weightNum) + ": $" + Number(finalPrice);
+    pPrice.innerText = "Your Price for " + String(postal_choice) + "with " + Number(weightNum) + ": $" + Number(finalPrice);
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
     console.log("Bubbles7")
