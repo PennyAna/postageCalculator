@@ -34,23 +34,29 @@ function getPostalPrice(weight) {
     pPrice.setAttribute('class', 'finalPrice');
     pPrice.setAttribute('id', 'finalPrice');
     pPrice.setAttribute('name', 'finalPrice');
-    var weightNum = postal_weight;
-    
-    var type = postal_choice;
     var finalPrice = 0;
+    var weightNum = postal_weight.value; 
+    var type = postal_choice;
+    var typeDescript = "";
     switch(type) {
-        case 1, 2:
+        case 1:
             finalPrice = getLetterPrice(type, weight);
+            typeDescript = 'First Class Letter - Stamped';
+            break;
+        case 2: 
+            finalPrice = getLetterPrice(type, weight);
+            typeDescript = 'First Class Letter - Metered';
             break;
         case 3:
             finalPrice = getEnvPrice(weight);
+            typeDescript = 'First Class Large Envelopes';
             break;
         case 4:
             finalPrice = getPckgPrice(weight);
+            typeDescript = 'First Class Package Service Retail';
             break;
     }
-    
-    pPrice.innerText = "Your Price for " + String(postal_choice.innerText) + "with " + Number(weightNum) + ": $" + Number(finalPrice);
+    pPrice.innerText = "Your Price for " + typeDescript + "with weight " + Number(weightNum) + ": $" + Number(finalPrice);
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
     console.log("Bubbles7")
