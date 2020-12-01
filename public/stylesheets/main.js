@@ -13,7 +13,7 @@ function setInputMax(type) {
         inner += "<input type='number' id='postalWeight' name='postalWeight' min='0'max='3.5' step='.5'>";
         // var postalWeight = getWeightInput(3.5, .5);
     }
-    else (type == 3 || type == 4) {           
+    else if (type == 3 || type == 4) {           
         inner += "<input type='number' id='postalWeight' name='postalWeight' min='0' max='13' step='1'>";
         // var postalWeight = getWeightInput(13, 1);
     }
