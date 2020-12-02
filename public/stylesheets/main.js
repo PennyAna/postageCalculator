@@ -23,13 +23,15 @@ function setInputMax(type) {
     }
     document.getElementById('postalP').innerHTML = inner;
 }
-document.getElementById('postalWeight').addEventListener('change', function() {
-    postal_weight_init = document.getElementById('postalWeight');
-    postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
-    }
-);
-document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
-console.log("Bubbles5");
+if (document.getElementById('postalWeight') != null) {
+    document.getElementById('postalWeight').addEventListener('change', function() {
+        postal_weight_init = document.getElementById('postalWeight');
+        postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
+        }
+    );
+    
+    document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
+    console.log("Bubbles5");
 //creates postal price p element w/weightBtn onclick event, appends to body
 function getPostalPrice(weight) {
     console.log("Bubbles6");
@@ -156,4 +158,5 @@ function getPckgPrice(weight) {
     }
         console.log("Bubbles13");
         return price;
+}
 }
