@@ -10,21 +10,12 @@ div {
 .jumbotron {
   background: #401685;
   color: white;
-  padding-bottom: 80px; 
+  padding-bottom: 10px;
 }
 .jumbotron p {
 color: #d9ccee;
 max-width: 75%;
 margin: 1em auto 2em; 
-}
-.navbar + .jumbotron {
-margin-top: -20px; 
-}
-.navbar {
-
-}
-.nav {
-
 }
 h1 {
   background-color: rgb(255, 129, 71);
@@ -32,7 +23,7 @@ h1 {
 h2 {
   background-color: rgb(255, 129, 71);
 }
-.postLabel {
+.postalLabel {
   color: #291844;
   background-color: #a45ee5;
 }
