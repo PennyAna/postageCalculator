@@ -9,7 +9,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.get('/', function (req, res) { res.render('pages/index.ejs');})
 app.get('/postage', function (req, res) {
     res.render('public/stylesheets/main.css');
-    res.render('pages/postage.html');
+    res.render('pages/postage.ejs');
  
 });
 app.get('/db', async function(req, res) {
