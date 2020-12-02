@@ -31,6 +31,7 @@ function() {
             weightTwo.style.display = 'block';
         }
     }
+    
 });
 if (document.getElementById('postalWeight') != null) {
     document.getElementById('postalWeight').addEventListener('change', function() {
@@ -40,10 +41,8 @@ if (document.getElementById('postalWeight') != null) {
     );
 }    
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
-console.log("Bubbles5");
 
 function getPostalPrice(weight) {
-    console.log("Bubbles6");
     var priceDiv = document.createElement('div');    
     priceDiv.classList.add('postalDiv');
     priceDiv.setAttribute('id', 'priceDiv');
@@ -78,11 +77,9 @@ function getPostalPrice(weight) {
     pPrice.innerText = "Your Price for " + typeDescript + "with weight " + Number(weightNum) + ": $" + Number(finalPrice);
     priceDiv.appendChild(pPrice); 
     document.body.appendChild(priceDiv);
-    console.log("Bubbles7")
 }
 //called by getPostalPrice() using weight to determine final price for return
 function getLetterPrice(type, weight) {
-    console.log("Bubbles8");
     if (weight <= 1) {
         if (type == 1) {
             price = .55;
@@ -100,13 +97,11 @@ function getLetterPrice(type, weight) {
             }
         } 
     }
-    console.log("Bubbles9")
     return price;
 }
 //called by getPostalPrice() using weight to determine final price for return
 //this is a VERY, VERY nasty nested if situ, I will do the math to fix it later
 function getEnvPrice(weight) {
-    console.log("Bubbles10")
     if (weight <= 1) {
         price = 1;
         if (weight <= 2) {
@@ -146,12 +141,10 @@ function getEnvPrice(weight) {
             }
         } 
     }
-    console.log("Bubbles11");
     return price;
 }
 //called by getPostalPrice() using weight to determine final price for return
 function getPckgPrice(weight) {
-    console.log("Bubbles12");
     var price = 0;
     if (weight <= 4) {
         price = 3.8;
@@ -165,6 +158,5 @@ function getPckgPrice(weight) {
             }
         }
     }
-        console.log("Bubbles13");
         return price;
 }
