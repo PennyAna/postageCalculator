@@ -1,9 +1,11 @@
 body {
-
+  background-color: rgb(245, 235, 235);
+  width: 50%;
+  height: auto;
 }
 .jumbotron {
   background: #291844;
-  color: rgb(245, 235, 235);
+  color: white;
   padding-bottom: 80px; 
 }
 .jumbotron p {
