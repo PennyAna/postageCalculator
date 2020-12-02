@@ -90,7 +90,7 @@ function getPostalPrice(weight) {
     }
     pPrice.innerText = "Your Price for " + typeDescript + "with weight " + Number(weightNum) + ": $" + Number(finalPrice);
     priceDiv.appendChild(pPrice); 
-    document.getElementById('postalDiv').appendChild(priceDiv);
+    document.getElementById('weightDiv').appendChild(priceDiv);
 }
 //called by getPostalPrice() using weight to determine final price for return
 function getLetterPrice(type, weight) {
