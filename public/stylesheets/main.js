@@ -1,38 +1,47 @@
-var postal_type = '';
-var postal_choice = '';
-document.getElementById('postalType').addEventListener('selectionchange', function() {
+if (document.getElementById('postalType') != null) {
+    var postal_type = '';
+    var postal_choice = '';
+    document.getElementById('postalType').addEventListener('selectionchange', function() {
                     postal_type = document.getElementById('postalType');
                     postal_choice = postal_type.options[postal_type.selectedIndex].value;
                 }
-);
-document.getElementById('typeBtn').addEventListener('click', setInputMax(postal_choice));
-var postal_weight_init = '';
-var postal_weight = '';
-//creates postal weight div element (label, btn) w/typeBtn onclick event, calls getWeightInput() to create input element
-function setInputMax(type) {
-    var inner = '';
-    switch(Number(type)) {
-        case 1, 2:
-            inner += "<input type='number' id='postalWeight' name='postalWeight' min=0 max=3.5 step=.5>";
-            // var postalWeight = getWeightInput(3.5, .5);
-            break;
-      case 3, 4:
-            inner += "<input type='number' id='postalWeight' name='postalWeight' min=0 max=13 step=1>";
-            // var postalWeight = getWeightInput(13, 1);
-            break;
-    }
-    document.getElementById('postalP').innerHTML = inner;
+    );
 }
+document.getElementById('typeBtn').addEventListener('click', 
+function() {
+    var weightOne = document.getElementById('postalWeight1');
+    var weightTwo = document.getElementById('postalWeight2');
+
+    var settingOne = weight1.style.display;
+    var settingTWo = weight2.style.display;
+    // now toggle the clock and the button text, depending on current state
+    if (postal_choice == 1 || postal_choice == 2) {
+        if (settingOne == 'none') {
+            weightOne.style.display = 'block';
+        }
+        if (settingTwo == 'block') {
+            weightTwo.style.display = 'none';
+        }
+    }
+    if (postal_choice == 3 || postal_choice == 4) {
+        if (settingOne == 'block') {
+            weightOne.style.display = 'one';
+        }
+        if (settingTwo == 'none') {
+            weightTwo.style.display = 'block';
+        }
+    }
+});
 if (document.getElementById('postalWeight') != null) {
     document.getElementById('postalWeight').addEventListener('change', function() {
-        postal_weight_init = document.getElementById('postalWeight');
-        postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
-        }
+    postal_weight_init = document.getElementById('postalWeight');
+    postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
+    }
     );
-    
-    document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
-    console.log("Bubbles5");
-//creates postal price p element w/weightBtn onclick event, appends to body
+}    
+document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
+console.log("Bubbles5");
+
 function getPostalPrice(weight) {
     console.log("Bubbles6");
     var priceDiv = document.createElement('div');    
@@ -158,5 +167,4 @@ function getPckgPrice(weight) {
     }
         console.log("Bubbles13");
         return price;
-}
 }
