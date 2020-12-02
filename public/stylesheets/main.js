@@ -7,7 +7,7 @@ document.getElementById('postalType').addEventListener('selectionchange', functi
 );
 var weightOne = document.getElementById('postalWeight1');
 var weightTwo = document.getElementById('postalWeight2');
-document.body.addEventListener('load', function() {
+this.addEventListener('load', function() {
     weightOne.style.display = 'none';
     weightTwo.style.display = 'none';
 })
