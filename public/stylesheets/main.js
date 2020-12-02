@@ -7,39 +7,56 @@ if (document.getElementById('postalType') != null) {
                 }
     );
 }
+var weightFlag1 = 0;
+var weightFlag1 = 0;
 document.getElementById('typeBtn').addEventListener('click', 
 function() {
     var weightOne = document.getElementById('postalWeight1');
     var weightTwo = document.getElementById('postalWeight2');
 
     var settingOne = weight1.style.display;
-    var settingTWo = weight2.style.display;
+    var settingTwo = weight2.style.display;
     // now toggle the clock and the button text, depending on current state
     if (postal_choice == 1 || postal_choice == 2) {
         if (settingOne == 'none') {
             weightOne.style.display = 'block';
+            weightFlag1 = 1;
         }
         if (settingTwo == 'block') {
             weightTwo.style.display = 'none';
+            weightFlag2 = 0
         }
     }
     if (postal_choice == 3 || postal_choice == 4) {
         if (settingOne == 'block') {
             weightOne.style.display = 'one';
+            weightFlag1 = 0;
         }
         if (settingTwo == 'none') {
             weightTwo.style.display = 'block';
+            weightFlag2 = 1;
         }
     }
     
 });
-if (document.getElementById('postalWeight') != null) {
-    document.getElementById('postalWeight').addEventListener('change', function() {
-    postal_weight_init = document.getElementById('postalWeight');
-    postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
-    }
+postal_weight_init = "";
+postal_weight = "";
+
+if (weightFlag1 == 1 && weightFlag2 == 0) {
+   document.getElementById('postalWeight1').addEventListener('change', function() {
+        postal_weight_init = document.getElementById('postalWeight1');
+        postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
+        }
     );
-}    
+}   
+else if (weightFlag1 = 0 && weightFlag2 = 1) {
+    document.getElementById('postalWeight2').addEventListener('change', function() {
+    postal_weight_init = document.getElementById('postalWeight2');
+    postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
+    });
+}   
+
+ 
 document.getElementById('weightBtn').addEventListener('click', getPostalPrice(postal_weight));
 
 function getPostalPrice(weight) {
