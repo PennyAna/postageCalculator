@@ -2,8 +2,8 @@ body {
 
 }
 .jumbotron {
-  background: #532F8C;
-  color: white;
+  background: #291844;
+  color: rgb(245, 235, 235);
   padding-bottom: 80px; 
 }
 .jumbotron p {
@@ -21,10 +21,10 @@ margin-top: -20px;
 
 }
 h1 {
-  background-color: tomato;
+  background-color: rgb(255, 129, 71);
 }  
 h2 {
-  background-color: tomato;
+  background-color: rgb(255, 129, 71);
 }
 .postLabel {
 
