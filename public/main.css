@@ -2,10 +2,12 @@ body {
   background-color: rgb(245, 235, 235);
   width: 50%;
   height: auto;
+  margin: 0px;
 }
 div {
   color: #291844;
   background-color: #a45ee5;
+  margin: 0px;
 }
 .jumbotron {
   background: #401685;
