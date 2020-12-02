@@ -49,7 +49,7 @@ if (weightFlag1 == 1 && weightFlag2 == 0) {
         }
     );
 }   
-else if (weightFlag1 = 0 && weightFlag2 = 1) {
+else if (weightFlag1 == 0 && weightFlag2 == 1) {
     document.getElementById('postalWeight2').addEventListener('change', function() {
     postal_weight_init = document.getElementById('postalWeight2');
     postal_weight = postal_weight_init.options[postal_weight_init.selectedIndex].value;
