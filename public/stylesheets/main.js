@@ -8,7 +8,7 @@ if (document.getElementById('postalType') != null) {
     );
 }
 var weightFlag1 = 0;
-var weightFlag1 = 0;
+var weightFlag2 = 0;
 document.getElementById('typeBtn').addEventListener('click', 
 function() {
     var weightOne = document.getElementById('postalWeight1');
