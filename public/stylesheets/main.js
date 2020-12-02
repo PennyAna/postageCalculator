@@ -1,12 +1,16 @@
-if (document.getElementById('postalType') != null) {
-    var postal_type = '';
-    var postal_choice = '';
-    document.getElementById('postalType').addEventListener('selectionchange', function() {
-                    postal_type = document.getElementById('postalType');
-                    postal_choice = postal_type.options[postal_type.selectedIndex].value;
-                }
-    );
-}
+var postal_type = '';
+var postal_choice = '';
+document.getElementById('postalType').addEventListener('selectionchange', function() {
+                postal_type = document.getElementById('postalType');
+                postal_choice = postal_type.options[postal_type.selectedIndex].value;
+            }
+);
+var weightOne = document.getElementById('postalWeight1');
+var weightTwo = document.getElementById('postalWeight2');
+document.body.addEventListener('load', function() {
+    weightOne.style.display = 'none';
+    weightTwo.style.display = 'none';
+})
 var weightFlag1 = 0;
 var weightFlag2 = 0;
 document.getElementById('typeBtn').addEventListener('click', 
