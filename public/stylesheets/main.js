@@ -14,8 +14,8 @@ function() {
     var weightOne = document.getElementById('postalWeight1');
     var weightTwo = document.getElementById('postalWeight2');
 
-    var settingOne = weight1.style.display;
-    var settingTwo = weight2.style.display;
+    var settingOne = weightOne.style.display;
+    var settingTwo = weightTwo.style.display;
     // now toggle the clock and the button text, depending on current state
     if (postal_choice == 1 || postal_choice == 2) {
         if (settingOne == 'none') {
