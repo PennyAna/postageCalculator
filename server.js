@@ -8,8 +8,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 app.get('/', function (req, res) { res.render('pages/index.ejs');})
 app.get('/postage', function (req, res) {
-    res.render('pages/postage.html');
     res.render('public/stylesheets/main.css');
+    res.render('pages/postage.html');
+ 
 });
 app.get('/db', async function(req, res) {
     try {
