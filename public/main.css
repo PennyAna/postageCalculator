@@ -3,9 +3,10 @@ body {
   background-color: rgb(245, 235, 235);
   width: 50%;
   height: auto;
-  margin: 0px;
   align-content: center;
   justify-content: center;
+  margin-left:25%;
+  margin-right:25%;
 }
 div {
   color: #291844;
