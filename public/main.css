@@ -3,6 +3,7 @@ body {
   width: 50%;
   height: auto;
   margin: 0px;
+  align-content: center;
 }
 div {
   color: #291844;
