@@ -29,7 +29,8 @@ h2 {
   background-color: rgb(255, 129, 71);
 }
 .postLabel {
-  color: #291844
+  color: #291844;
+  background-color: #a45ee5;
 }
 .container {
   background-color: #a45ee5;
