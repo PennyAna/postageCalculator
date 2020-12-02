@@ -54,7 +54,7 @@ legend {
 
 }
 .postalWeightGrp {
-
+  display: none;
 }
 #postalWeight1 {
   display: none;
