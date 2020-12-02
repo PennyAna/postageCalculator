@@ -2,10 +2,12 @@ const express = require('express');
 const path = require('path');
 var app = express();
 app.use(express.static(path.join(__dirname, '/public')));
+app.set('views', path.join(__dirname, '/views'));
+app.use(express.static(path.join(__dirname, '/')));
 app.set('port', (process.env.PORT || 5000));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
+
 app.get('/', function (req, res) { res.render('pages/index.ejs');})
 app.get('/postage', function (req, res) {
     res.render('pages/postage.ejs');
