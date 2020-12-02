@@ -3,8 +3,12 @@ body {
   width: 50%;
   height: auto;
 }
+div {
+  color: #291844;
+  background-color: #a45ee5;
+}
 .jumbotron {
-  background: #291844;
+  background: #401685;
   color: white;
   padding-bottom: 80px; 
 }
