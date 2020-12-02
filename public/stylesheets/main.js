@@ -7,7 +7,7 @@ document.getElementById('postalType').addEventListener('selectionchange', functi
 );
 var weightOne = document.getElementById('postalWeight1');
 var weightTwo = document.getElementById('postalWeight2');
-this.addEventListener('load', function() {
+document.addEventListener('load', function() {
     weightOne.style.display = 'none';
     weightTwo.style.display = 'none';
 })
@@ -15,9 +15,6 @@ var weightFlag1 = 0;
 var weightFlag2 = 0;
 document.getElementById('typeBtn').addEventListener('click', 
 function() {
-    var weightOne = document.getElementById('postalWeight1');
-    var weightTwo = document.getElementById('postalWeight2');
-
     var settingOne = weightOne.style.display;
     var settingTwo = weightTwo.style.display;
     // now toggle the clock and the button text, depending on current state
@@ -28,7 +25,7 @@ function() {
         }
         if (settingTwo == 'block') {
             weightTwo.style.display = 'none';
-            weightFlag2 = 0
+            weightFlag2 = 0;
         }
     }
     if (postal_choice == 3 || postal_choice == 4) {
