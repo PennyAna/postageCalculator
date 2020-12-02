@@ -1,0 +1,68 @@
+body {
+
+}
+.jumbotron {
+  background: #532F8C;
+  color: white;
+  padding-bottom: 80px; 
+}
+.jumbotron p {
+color: #d9ccee;
+max-width: 75%;
+margin: 1em auto 2em; 
+}
+.navbar + .jumbotron {
+margin-top: -20px; 
+}
+.navbar {
+
+}
+.nav {
+
+}
+h1 {
+  background-color: tomato;
+}  
+h2 {
+  background-color: tomato;
+}
+.postLabel {
+
+}
+.container {
+
+}
+.postalForm {
+
+}
+.postalSet {
+
+}
+legend {
+
+}
+#postalType {
+
+}
+#postalType.select {
+
+}
+.postalBtn {
+
+}
+.postalWeightGrp {
+  display: none;
+}
+#postalWeight1 {
+  display: none;
+}
+#postalWeight2 {
+  display: none;
+}
+#priceDiv {
+
+}
+#pPrice {
+
+}
+
